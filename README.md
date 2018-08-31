@@ -76,9 +76,7 @@ Use at least 3 hosts.
 
 ## Choosing an operating system
 
-While Linux comes in many flavors, **Ubuntu** (LTS) is the distribution of choice for hosting our cluster. This may seem opinionated—and it is—but then again, Ubuntu has always been a first class citizen in the Kubernetes ecosystem.
-
-CoreOS would be a great option as well, because of how it embraces the use of containers. On the other hand, not everything we might need in the future is readily available. Some essential packages are likely to be missing at this point, or at least there's no support for running them outside of containers.
+In this guide Centos is used for the operating system.
 
 That being said, feel free to use any Linux distribution you like. Just be aware that some of the sections in this guide may differ substantially depending on your chosen operating system.
 
@@ -97,12 +95,15 @@ While there are definitely some people out there able to configure *iptables* re
 Assuming the secure public Kubernetes API runs on port 6443, SSH daemon on 22, plus 80 and 443 for serving web traffic, results in the following basic UFW configuration:
 
 ```sh
-ufw allow ssh # sshd on port 22, be careful to not get locked out!
-ufw allow 6443 # remote, secure Kubernetes API access
-ufw allow 80
-ufw allow 443
-ufw default deny incoming # deny traffic on every other port, on any interface
-ufw enable
+sudo yum install -y firewalld
+sudo systemctl enable firewalld
+sudo systemctl start firewalld
+sudo firewall-cmd --zone=public --add-service=sshd --permanent
+sudo firewall-cmd --zone=public --add-port=6443/tcp --permanent
+sudo firewall-cmd --zone=public --add-service=https --permanent
+sudo firewall-cmd --zone=public --add-service=http --permanent
+sudo firewall-cmd --zone=public --add-rich-rule='rule family=ipv4 source address=0.0.0.0/0 drop' --permanent
+sudo firewall-cmd --reload
 ```
 
 This ruleset will get slightly expanded in the upcoming sections.
