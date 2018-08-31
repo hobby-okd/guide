@@ -90,7 +90,7 @@ This is a tough one. Almost every single guide fails to bring the security topic
 
 ![Terraform](assets/terraform.png) [`security/ufw`](https://github.com/hobby-kube/provisioning/tree/master/security/ufw)
 
-While there are definitely some people out there able to configure *iptables* reliably, the average mortal will cringe when glancing at the syntax of the most basic rules. Luckily, there are more approachable solutions out there. One of those is [UFW](https://help.ubuntu.com/community/UFW), *the uncomplicated firewall*—a human friendly command line interface offering simple abstractions for managing complex *iptables* rules.
+Centos uses firewalld.
 
 Assuming the secure public Kubernetes API runs on port 6443, SSH daemon on 22, plus 80 and 443 for serving web traffic, results in the following basic UFW configuration:
 
