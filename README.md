@@ -98,7 +98,7 @@ Assuming the secure public Kubernetes API runs on port 6443, SSH daemon on 22, p
 sudo yum install -y firewalld
 sudo systemctl enable firewalld
 sudo systemctl start firewalld
-sudo firewall-cmd --zone=public --add-service=sshd --permanent
+sudo firewall-cmd --zone=public --add-service=ssh --permanent
 sudo firewall-cmd --zone=public --add-port=6443/tcp --permanent
 sudo firewall-cmd --zone=public --add-service=https --permanent
 sudo firewall-cmd --zone=public --add-service=http --permanent
