@@ -102,7 +102,6 @@ sudo firewall-cmd --zone=public --add-service=ssh --permanent
 sudo firewall-cmd --zone=public --add-port=6443/tcp --permanent
 sudo firewall-cmd --zone=public --add-service=https --permanent
 sudo firewall-cmd --zone=public --add-service=http --permanent
-sudo firewall-cmd --zone=public --add-rich-rule='rule family=ipv4 source address=0.0.0.0/0 drop' --permanent
 sudo firewall-cmd --reload
 ```
 
