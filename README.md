@@ -66,6 +66,14 @@ At this point it's time to choose a cloud provider based on a few criteria such 
 
 [Linode](https://www.linode.com/), [Vultr](https://www.vultr.com/) and a couple of other providers with similar offers are other viable options. While they all have their advantages and disadvantages, they should be perfectly fine for hosting a Kubernetes cluster.
 
+## Cluster on Scaleway example
+
+|  Type  |  Cores    |   Memory | Disk                     | Bandwidth    |
+|   ---  |   ---     |   ---    |  ---                     |  ---         |
+|1-L New |   8 x86-64|    8 GB  |  50 + 150 + 150 GB       |  400 Mbits/s |
+
+Use at least 3 hosts.
+
 ## Choosing an operating system
 
 While Linux comes in many flavors, **Ubuntu** (LTS) is the distribution of choice for hosting our cluster. This may seem opinionated—and it is—but then again, Ubuntu has always been a first class citizen in the Kubernetes ecosystem.
