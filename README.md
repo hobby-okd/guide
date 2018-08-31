@@ -630,6 +630,9 @@ Rook and Portworx both shine with a simple setup and transparent operations. Roo
 
 Use the two disks provisioned. Format the two disks as zfs mirrors with lz4 compression.
 
+Install zfs using [RHEL and CentOS guide](https://github.com/zfsonlinux/zfs/wiki/RHEL-and-CentOS).
+
+
 ### Deploying Rook
 
 As we run only a three node cluster, we're going to deploy Rook on all three of them by adding a master toleration to the Rook cluster definition.
