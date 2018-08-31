@@ -626,6 +626,10 @@ Currently there are a couple of interesting solutions matching our criteria, but
 
 Rook and Portworx both shine with a simple setup and transparent operations. Rook is our preferred choice because it offers a little more flexibility and is open source in contrast to Portworx, even though the latter wins in simplicity by launching just a single pod per instance.
 
+### Scaleway example of storage
+
+Use the two disks provisioned. Format the two disks as zfs mirrors with lz4 compression.
+
 ### Deploying Rook
 
 As we run only a three node cluster, we're going to deploy Rook on all three of them by adding a master toleration to the Rook cluster definition.
