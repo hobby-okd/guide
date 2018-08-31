@@ -177,10 +177,8 @@ What's left is to add the following firewall rules:
 
 ```sh
 # open VPN port on private network interface (use eth0 on Hetzner Cloud)
-ufw allow in on eth1 to any port 51820
-# allow all traffic on VPN tunnel interface
-ufw allow in on wg0
-ufw reload
+sudo firewall-cmd --zone=public --add-port=51820/udp --permanen
+sudo firewall-cmd --reload
 ```
 
 Before starting Wireguard we need to make sure that ip forwarding is enabled. Executing `sysctl net.ipv4.ip_forward` should show `net.ipv4.ip_forward = 1`. If this is not the case, run the following commands:
