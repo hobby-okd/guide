@@ -1,5 +1,7 @@
 # Okd Kubernetes clusters for the hobbyist
 
+> Currently this project is being reworked to use Okd. Until further notice, expect breakage.
+
 > The tinkerers of today are the leaders of tomorrow.
 
 This guide answers the question of how to setup and operate a fully functional, secure Kubernetes cluster on a cloud provider such as Hetzner Cloud, DigitalOcean or Scaleway. It explains how to overcome the lack of external ingress controllers, fully isolated secure private networking and persistent distributed block storage.
